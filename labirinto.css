@@ -1,0 +1,81 @@
+/* --- Reset & Base --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#6366f1,#a5b4fc);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: #fff;
+}
+.container {
+  margin: 20px;
+  width: max-content;
+}
+
+/* --- Header --- */
+header { text-align: center; margin-bottom: 15px; }
+header h1 { font-size: 2rem; margin-bottom: 10px; }
+.controls { display: flex; gap: 10px; justify-content: center; margin-bottom: 10px; }
+.controls input { width: 60px; padding: 4px; border-radius: 6px; border: none; text-align: center; }
+.controls button { padding: 6px 12px; border-radius: 8px; border: none; background-color: #fff; color: #6366f1; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.controls button:hover { background-color: #e0e7ff; }
+
+.status { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; }
+
+/* --- Board --- */
+.board-container { position: relative; }
+.board { display: grid; background-color: #1e293b; border-radius: 8px; }
+.cell { width: 20px; height: 20px; border-radius: 4px; }
+.wall { background-color: #334155; }
+.start-cell { background-color: #22c55e; }
+.end-cell { background-color: #f59e0b; }
+.player { background-color: #0ea5e9; }
+
+/* --- Canvas FX --- */
+.fx-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* --- Toast --- */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #f87171;
+  border-radius: 6px;
+  font-weight: bold;
+  display: none;
+  z-index: 100;
+}
+.toast.show { display: block; }
+
+/* --- Modal --- */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1e293b;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 200;
+}
+.modal h2 { margin-bottom: 10px; }
+.modal-actions { margin-top: 15px; display: flex; gap: 10px; justify-content: center; }
+.modal button { padding: 6px 12px; border-radius: 6px; border: none; cursor: pointer; font-weight: bold; }
+.modal button.btn-ghost { background: #475569; color: #fff; }
+.modal button.btn { background: #f59e0b; color: #fff; }
+.modal button:hover { opacity: 0.9; }
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+  .controls { flex-wrap: wrap; }
+}

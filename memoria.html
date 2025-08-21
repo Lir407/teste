@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jogo da Memória</title>
+  <link rel="stylesheet" href="memoria.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <h1>Jogo da Memória</h1>
+      <div class="controls">
+        <label class="control">
+          Tema:
+          <select id="theme">
+            <option value="emoji">Emojis</option>
+            <option value="frutas">Frutas</option>
+            <option value="animais">Animais</option>
+            <option value="formas">Formas</option>
+          </select>
+        </label>
+        <label class="control">
+          Tamanho:
+          <select id="size">
+            <option value="4">4 x 4</option>
+            <option value="6">6 x 6</option>
+          </select>
+        </label>
+        <button id="newGame" class="btn">Novo jogo</button>
+      </div>
+    </header>
+
+    <section class="status">
+      <div class="pill">👣 Jogadas: <span id="moves">0</span></div>
+      <div class="pill">⏱️ Tempo: <span id="time">00:00</span></div>
+      <div class="pill">⭐ Melhor: <span id="best">—</span></div>
+    </section>
+
+    <section class="board-wrap">
+      <div id="board" class="board" aria-label="Tabuleiro do jogo da memória"></div>
+    </section>
+
+    <dialog id="winModal" class="modal">
+      <h2>🎉 Parabéns!</h2>
+      <p>Você concluiu em <strong><span id="finalTime">00:00</span></strong> com <strong><span id="finalMoves">0</span></strong> jogadas.</p>
+      <div class="modal-actions">
+        <button id="playAgain" class="btn">Jogar novamente</button>
+        <button id="closeModal" class="btn btn-ghost">Fechar</button>
+      </div>
+    </dialog>
+  </main>
+
+  <script src="memoria.js"></script>
+</body>
+</html>

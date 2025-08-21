@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labirinto Dinâmico</title>
+  <link rel="stylesheet" href="labirinto.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Labirinto Dinâmico</h1>
+      <div class="controls">
+        <label>Tamanho: <input type="number" id="size" value="21" min="11" max="51" step="2"></label>
+        <button id="btnNew">Novo Labirinto</button>
+        <button id="btnReset">Resetar</button>
+      </div>
+      <div class="status">
+        <span>Tempo: <span id="time">00:00</span></span>
+        <span>Passos: <span id="steps">0</span></span>
+      </div>
+    </header>
+
+    <div class="board-container">
+      <div id="board" class="board"></div>
+      <canvas id="fx" class="fx-layer"></canvas>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <!-- Modal de Vitória -->
+    <template id="win-template">
+      <div class="modal">
+        <h2>🎉 Você venceu!</h2>
+        <p id="summary">Resumo</p>
+        <div class="modal-actions">
+          <button id="again" class="btn">Jogar Novamente</button>
+          <button id="close" class="btn btn-ghost">Fechar</button>
+        </div>
+      </div>
+    </template>
+  </main>
+
+  <script src="labirinto.js"></script>
+</body>
+</html>
